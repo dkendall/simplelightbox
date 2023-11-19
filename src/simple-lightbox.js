@@ -8,6 +8,7 @@ class SimpleLightbox {
         nav: true,
         navText: ['&lsaquo;', '&rsaquo;'],
         captions: true,
+        captionOpacity: 1.0,
         captionDelay: 0,
         captionSelector: 'img',
         captionType: 'attr',
@@ -339,6 +340,7 @@ class SimpleLightbox {
             let captionClasses = this.options.captionClass.split(/[\s,]+/);
             this.domNodes.caption.classList.add(...captionClasses);
         }
+        this.domNodes.caption.dataset.opacityTarget = this.options.captionOpacity;
 
         this.domNodes.image = document.createElement('div');
         this.domNodes.image.classList.add('sl-image');
